@@ -1,12 +1,40 @@
-Buscador Nudelns
+# Nudelns Search Tool
 
-Requerimientos:
-- Python
+Nudelns Search Tool is a text search utility based on cosine similarity over a database of Spanish documents. It uses TF-IDF and natural language processing to find the most relevant documents according to the user's query.
 
-Para procesar la base de datos (carpeta Db en la ruta donde se encuentra el buscador):
-- Ejecutar DB_reader.py
-- Asegurarse que el path de la base de datos sea el correcto
-Luego de procesada la base de datos, el archivo db.pickle almacena los datos necesarios para el buscador.
+## Requirements
 
-Para realizar una búsqueda:
-- Ejecutar Nudelns.py, por cuántas búsquedas quiera hacer. El archivo Language_processing.py almacena funciones que procesan texto y son importantes para el buscador. El archivo cos_sim almacena las funciones que implementan el algoritmo 'similitud de cosenos' para realizar la búsqueda.
+- Python 3.x
+- [scikit-learn](https://scikit-learn.org/)
+- [pandas](https://pandas.pydata.org/)
+- [nltk](https://www.nltk.org/)
+
+You can install the dependencies by running:
+
+```sh
+pip install scikit-learn pandas nltk
+```
+
+## Instructions
+
+### Processing the Database
+
+1. Place your documents in the `Db` folder located in the same directory as the search tool.
+2. Run `DB_reader.py` to process the documents and generate the `db.pickle` file.
+    - Make sure the path to the `Db` folder is correct in the script.
+
+### Performing a Search
+
+1. Run `Nudelns.py` to start the search tool.
+2. Enter your query when prompted.
+3. The tool will display the most relevant documents based on cosine similarity.
+
+### File Structure
+
+- `DB_reader.py`: Processes the documents and creates the serialized database.
+- `Nudelns.py`: Main interface for performing searches.
+- `Language_processing.py`: Functions for text processing.
+- `cos_sim.py`: Implementation of the cosine similarity algorithm.
+
+> **Note:** Make sure to run `DB_reader.py` every time you add or modify documents in the `Db` folder.
+
